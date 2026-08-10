@@ -167,3 +167,6 @@ __pycache__/
 compare/
 AGENTS.md
 test_score_mjlog.json
+
+# Local editor/agent settings
+.claude/

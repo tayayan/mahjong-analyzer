@@ -44,6 +44,18 @@ struct RiichiEvent
     int actor;
 };
 
+/**
+ * @brief Extraction of a north tile as nuki dora. Sanma only.
+ *
+ * Added in this fork: without it a sanma replay loses track of the extracted tiles and
+ * the hand size no longer adds up. See docs/majsoul_analyzer.md.
+ */
+struct NukiEvent
+{
+    /*! Acting player index. */
+    int actor;
+};
+
 struct DoraOpenEvent
 {
     /*! Opened dora indicator tile. */
@@ -77,8 +89,9 @@ struct RyukyokuEvent
     int type;
 };
 
-using RoundEvent = std::variant<DrawEvent, DiscardEvent, CallEvent, RiichiEvent,
-                                DoraOpenEvent, RonEvent, TsumoEvent, RyukyokuEvent>;
+using RoundEvent =
+    std::variant<DrawEvent, DiscardEvent, CallEvent, RiichiEvent, NukiEvent,
+                 DoraOpenEvent, RonEvent, TsumoEvent, RyukyokuEvent>;
 
 } // namespace mahjong
 

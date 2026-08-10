@@ -1,0 +1,2610 @@
+{
+ "schema": "majsoul-replay/1",
+ "uuid": "250810-sample-0000-0000-0000-000000000000",
+ "url": "https://game.mahjongsoul.com/?paipu=250810-sample-0000-0000-0000-000000000000_a1001",
+ "game_mode": "yonma",
+ "game_length": "hanchan",
+ "rules": {
+  "red_dora": true,
+  "ura_dora": true,
+  "open_tanyao": true
+ },
+ "target_seat": 0,
+ "players": [
+  {
+   "seat": 0,
+   "name": "こなた",
+   "level": "10301"
+  },
+  {
+   "seat": 1,
+   "name": "かがみ",
+   "level": "10302"
+  },
+  {
+   "seat": 2,
+   "name": "つかさ",
+   "level": "10203"
+  },
+  {
+   "seat": 3,
+   "name": "みゆき",
+   "level": "10401"
+  }
+ ],
+ "rounds": [
+  {
+   "round_wind": 0,
+   "round_number": 1,
+   "honba": 0,
+   "kyotaku": 0,
+   "dealer": 0,
+   "scores": [
+    25000,
+    25000,
+    25000,
+    25000
+   ],
+   "hands": [
+    [
+     "0m",
+     "1m",
+     "1s",
+     "3z",
+     "4p",
+     "5s",
+     "6p",
+     "7m",
+     "7s",
+     "7s",
+     "7z",
+     "9m",
+     "9m"
+    ],
+    [
+     "1m",
+     "3p",
+     "4s",
+     "4s",
+     "4s",
+     "4z",
+     "5m",
+     "5s",
+     "6p",
+     "6s",
+     "6z",
+     "7m",
+     "7p"
+    ],
+    [
+     "1m",
+     "2p",
+     "2s",
+     "3p",
+     "4p",
+     "4z",
+     "7p",
+     "7p",
+     "7z",
+     "8m",
+     "8p",
+     "8s",
+     "8s"
+    ],
+    [
+     "0p",
+     "0s",
+     "1m",
+     "1p",
+     "2p",
+     "3m",
+     "5z",
+     "6m",
+     "6m",
+     "6s",
+     "8p",
+     "9m",
+     "9s"
+    ]
+   ],
+   "dora_indicators": [
+    "3s"
+   ],
+   "events": [
+    {
+     "type": "draw",
+     "actor": 0,
+     "tile": "6m"
+    },
+    {
+     "type": "discard",
+     "actor": 0,
+     "tile": "1s",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 1,
+     "tile": "4p"
+    },
+    {
+     "type": "discard",
+     "actor": 1,
+     "tile": "6z",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 2,
+     "tile": "8p"
+    },
+    {
+     "type": "discard",
+     "actor": 2,
+     "tile": "7z",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 3,
+     "tile": "2s"
+    },
+    {
+     "type": "discard",
+     "actor": 3,
+     "tile": "8p",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 0,
+     "tile": "9m"
+    },
+    {
+     "type": "discard",
+     "actor": 0,
+     "tile": "4p",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 1,
+     "tile": "1z"
+    },
+    {
+     "type": "discard",
+     "actor": 1,
+     "tile": "1m",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 2,
+     "tile": "5z"
+    },
+    {
+     "type": "discard",
+     "actor": 2,
+     "tile": "2s",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 3,
+     "tile": "8p"
+    },
+    {
+     "type": "discard",
+     "actor": 3,
+     "tile": "9m",
+     "tsumogiri": false
+    },
+    {
+     "type": "call",
+     "actor": 0,
+     "meld_type": "pon",
+     "tiles": [
+      "9m",
+      "9m",
+      "9m"
+     ],
+     "from": 3,
+     "called_tile": "9m"
+    },
+    {
+     "type": "discard",
+     "actor": 0,
+     "tile": "5s",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 1,
+     "tile": "7s"
+    },
+    {
+     "type": "discard",
+     "actor": 1,
+     "tile": "6p",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 2,
+     "tile": "9s"
+    },
+    {
+     "type": "discard",
+     "actor": 2,
+     "tile": "8s",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 3,
+     "tile": "6z"
+    },
+    {
+     "type": "discard",
+     "actor": 3,
+     "tile": "2s",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 0,
+     "tile": "2p"
+    },
+    {
+     "type": "discard",
+     "actor": 0,
+     "tile": "7z",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 1,
+     "tile": "2s"
+    },
+    {
+     "type": "discard",
+     "actor": 1,
+     "tile": "7p",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 2,
+     "tile": "3s"
+    },
+    {
+     "type": "discard",
+     "actor": 2,
+     "tile": "1m",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 3,
+     "tile": "3m"
+    },
+    {
+     "type": "discard",
+     "actor": 3,
+     "tile": "9s",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 0,
+     "tile": "7s"
+    },
+    {
+     "type": "discard",
+     "actor": 0,
+     "tile": "9m",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 1,
+     "tile": "5s"
+    },
+    {
+     "type": "discard",
+     "actor": 1,
+     "tile": "5s",
+     "tsumogiri": true
+    },
+    {
+     "type": "draw",
+     "actor": 2,
+     "tile": "8m"
+    },
+    {
+     "type": "discard",
+     "actor": 2,
+     "tile": "4z",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 3,
+     "tile": "7z"
+    },
+    {
+     "type": "discard",
+     "actor": 3,
+     "tile": "0p",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 0,
+     "tile": "3p"
+    },
+    {
+     "type": "discard",
+     "actor": 0,
+     "tile": "1m",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 1,
+     "tile": "6p"
+    },
+    {
+     "type": "discard",
+     "actor": 1,
+     "tile": "1z",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 2,
+     "tile": "6p"
+    },
+    {
+     "type": "discard",
+     "actor": 2,
+     "tile": "3s",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 3,
+     "tile": "2p"
+    },
+    {
+     "type": "discard",
+     "actor": 3,
+     "tile": "2p",
+     "tsumogiri": true
+    },
+    {
+     "type": "draw",
+     "actor": 0,
+     "tile": "3z"
+    },
+    {
+     "type": "discard",
+     "actor": 0,
+     "tile": "6p",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 1,
+     "tile": "9p"
+    },
+    {
+     "type": "discard",
+     "actor": 1,
+     "tile": "2s",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 2,
+     "tile": "7p"
+    },
+    {
+     "type": "discard",
+     "actor": 2,
+     "tile": "9s",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 3,
+     "tile": "7m"
+    },
+    {
+     "type": "discard",
+     "actor": 3,
+     "tile": "6z",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 0,
+     "tile": "2s"
+    },
+    {
+     "type": "discard",
+     "actor": 0,
+     "tile": "6m",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 1,
+     "tile": "1z"
+    },
+    {
+     "type": "discard",
+     "actor": 1,
+     "tile": "1z",
+     "tsumogiri": true
+    },
+    {
+     "type": "draw",
+     "actor": 2,
+     "tile": "2z"
+    },
+    {
+     "type": "discard",
+     "actor": 2,
+     "tile": "7p",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 3,
+     "tile": "4z"
+    },
+    {
+     "type": "discard",
+     "actor": 3,
+     "tile": "6m",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 0,
+     "tile": "3z"
+    },
+    {
+     "type": "discard",
+     "actor": 0,
+     "tile": "2s",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 1,
+     "tile": "7z"
+    },
+    {
+     "type": "discard",
+     "actor": 1,
+     "tile": "6p",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 2,
+     "tile": "3p"
+    },
+    {
+     "type": "discard",
+     "actor": 2,
+     "tile": "3p",
+     "tsumogiri": true
+    },
+    {
+     "type": "draw",
+     "actor": 3,
+     "tile": "6z"
+    },
+    {
+     "type": "discard",
+     "actor": 3,
+     "tile": "3m",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 0,
+     "tile": "3s"
+    },
+    {
+     "type": "discard",
+     "actor": 0,
+     "tile": "3z",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 1,
+     "tile": "6s"
+    },
+    {
+     "type": "discard",
+     "actor": 1,
+     "tile": "4z",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 2,
+     "tile": "9s"
+    },
+    {
+     "type": "discard",
+     "actor": 2,
+     "tile": "5z",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 3,
+     "tile": "4m"
+    },
+    {
+     "type": "discard",
+     "actor": 3,
+     "tile": "8p",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 0,
+     "tile": "6m"
+    },
+    {
+     "type": "discard",
+     "actor": 0,
+     "tile": "3s",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 1,
+     "tile": "4s"
+    },
+    {
+     "type": "discard",
+     "actor": 1,
+     "tile": "4s",
+     "tsumogiri": true
+    },
+    {
+     "type": "draw",
+     "actor": 2,
+     "tile": "8s"
+    },
+    {
+     "type": "discard",
+     "actor": 2,
+     "tile": "2z",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 3,
+     "tile": "1p"
+    },
+    {
+     "type": "discard",
+     "actor": 3,
+     "tile": "7z",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 0,
+     "tile": "1z"
+    },
+    {
+     "type": "discard",
+     "actor": 0,
+     "tile": "1z",
+     "tsumogiri": true
+    },
+    {
+     "type": "draw",
+     "actor": 1,
+     "tile": "2z"
+    },
+    {
+     "type": "discard",
+     "actor": 1,
+     "tile": "6s",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 2,
+     "tile": "9p"
+    },
+    {
+     "type": "discard",
+     "actor": 2,
+     "tile": "8s",
+     "tsumogiri": false
+    },
+    {
+     "type": "riichi",
+     "actor": 2
+    },
+    {
+     "type": "draw",
+     "actor": 3,
+     "tile": "6z"
+    },
+    {
+     "type": "discard",
+     "actor": 3,
+     "tile": "1p",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 0,
+     "tile": "4z"
+    },
+    {
+     "type": "discard",
+     "actor": 0,
+     "tile": "4z",
+     "tsumogiri": true
+    },
+    {
+     "type": "draw",
+     "actor": 1,
+     "tile": "1p"
+    },
+    {
+     "type": "discard",
+     "actor": 1,
+     "tile": "1p",
+     "tsumogiri": true
+    },
+    {
+     "type": "draw",
+     "actor": 2,
+     "tile": "5m"
+    },
+    {
+     "type": "discard",
+     "actor": 2,
+     "tile": "5m",
+     "tsumogiri": true
+    },
+    {
+     "type": "draw",
+     "actor": 3,
+     "tile": "9p"
+    },
+    {
+     "type": "discard",
+     "actor": 3,
+     "tile": "9p",
+     "tsumogiri": true
+    },
+    {
+     "type": "draw",
+     "actor": 0,
+     "tile": "2m"
+    },
+    {
+     "type": "discard",
+     "actor": 0,
+     "tile": "2m",
+     "tsumogiri": true
+    },
+    {
+     "type": "draw",
+     "actor": 1,
+     "tile": "2z"
+    },
+    {
+     "type": "discard",
+     "actor": 1,
+     "tile": "9p",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 2,
+     "tile": "2m"
+    },
+    {
+     "type": "discard",
+     "actor": 2,
+     "tile": "2m",
+     "tsumogiri": true
+    },
+    {
+     "type": "draw",
+     "actor": 3,
+     "tile": "4p"
+    },
+    {
+     "type": "discard",
+     "actor": 3,
+     "tile": "5z",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 0,
+     "tile": "1z"
+    },
+    {
+     "type": "discard",
+     "actor": 0,
+     "tile": "6m",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 1,
+     "tile": "1s"
+    },
+    {
+     "type": "discard",
+     "actor": 1,
+     "tile": "1s",
+     "tsumogiri": true
+    },
+    {
+     "type": "draw",
+     "actor": 2,
+     "tile": "3z"
+    },
+    {
+     "type": "discard",
+     "actor": 2,
+     "tile": "3z",
+     "tsumogiri": true
+    },
+    {
+     "type": "draw",
+     "actor": 3,
+     "tile": "1s"
+    },
+    {
+     "type": "discard",
+     "actor": 3,
+     "tile": "1p",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 0,
+     "tile": "2z"
+    },
+    {
+     "type": "discard",
+     "actor": 0,
+     "tile": "2z",
+     "tsumogiri": true
+    },
+    {
+     "type": "draw",
+     "actor": 1,
+     "tile": "3s"
+    },
+    {
+     "type": "discard",
+     "actor": 1,
+     "tile": "3s",
+     "tsumogiri": true
+    },
+    {
+     "type": "draw",
+     "actor": 2,
+     "tile": "8m"
+    },
+    {
+     "type": "discard",
+     "actor": 2,
+     "tile": "8m",
+     "tsumogiri": true
+    },
+    {
+     "type": "draw",
+     "actor": 3,
+     "tile": "4m"
+    },
+    {
+     "type": "discard",
+     "actor": 3,
+     "tile": "6z",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 0,
+     "tile": "1s"
+    },
+    {
+     "type": "discard",
+     "actor": 0,
+     "tile": "1s",
+     "tsumogiri": true
+    },
+    {
+     "type": "draw",
+     "actor": 1,
+     "tile": "9s"
+    },
+    {
+     "type": "discard",
+     "actor": 1,
+     "tile": "7z",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 2,
+     "tile": "2m"
+    },
+    {
+     "type": "discard",
+     "actor": 2,
+     "tile": "2m",
+     "tsumogiri": true
+    },
+    {
+     "type": "draw",
+     "actor": 3,
+     "tile": "5z"
+    },
+    {
+     "type": "discard",
+     "actor": 3,
+     "tile": "7m",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 0,
+     "tile": "9p"
+    },
+    {
+     "type": "discard",
+     "actor": 0,
+     "tile": "1z",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 1,
+     "tile": "5z"
+    },
+    {
+     "type": "discard",
+     "actor": 1,
+     "tile": "5z",
+     "tsumogiri": true
+    },
+    {
+     "type": "ryukyoku",
+     "reason": "exhaustive"
+    }
+   ]
+  },
+  {
+   "round_wind": 0,
+   "round_number": 2,
+   "honba": 0,
+   "kyotaku": 0,
+   "dealer": 1,
+   "scores": [
+    25000,
+    25000,
+    25000,
+    25000
+   ],
+   "hands": [
+    [
+     "1m",
+     "2s",
+     "2z",
+     "4m",
+     "4p",
+     "6p",
+     "8p",
+     "8p",
+     "8s",
+     "9m",
+     "9m",
+     "9p",
+     "9s"
+    ],
+    [
+     "0m",
+     "2p",
+     "2p",
+     "4m",
+     "4s",
+     "4s",
+     "5s",
+     "5s",
+     "6z",
+     "7m",
+     "8m",
+     "8p",
+     "8s"
+    ],
+    [
+     "1s",
+     "1s",
+     "1z",
+     "2m",
+     "3p",
+     "3s",
+     "4s",
+     "6m",
+     "6m",
+     "6s",
+     "6s",
+     "7z",
+     "9s"
+    ],
+    [
+     "1p",
+     "1p",
+     "1p",
+     "1z",
+     "2m",
+     "4p",
+     "4s",
+     "5z",
+     "5z",
+     "7s",
+     "8p",
+     "9m",
+     "9m"
+    ]
+   ],
+   "dora_indicators": [
+    "2p"
+   ],
+   "events": [
+    {
+     "type": "draw",
+     "actor": 1,
+     "tile": "7p"
+    },
+    {
+     "type": "discard",
+     "actor": 1,
+     "tile": "8s",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 2,
+     "tile": "4z"
+    },
+    {
+     "type": "discard",
+     "actor": 2,
+     "tile": "4z",
+     "tsumogiri": true
+    },
+    {
+     "type": "draw",
+     "actor": 3,
+     "tile": "3p"
+    },
+    {
+     "type": "discard",
+     "actor": 3,
+     "tile": "7s",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 0,
+     "tile": "3m"
+    },
+    {
+     "type": "discard",
+     "actor": 0,
+     "tile": "2z",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 1,
+     "tile": "2z"
+    },
+    {
+     "type": "discard",
+     "actor": 1,
+     "tile": "2z",
+     "tsumogiri": true
+    },
+    {
+     "type": "draw",
+     "actor": 2,
+     "tile": "5p"
+    },
+    {
+     "type": "discard",
+     "actor": 2,
+     "tile": "6m",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 3,
+     "tile": "5z"
+    },
+    {
+     "type": "discard",
+     "actor": 3,
+     "tile": "2m",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 0,
+     "tile": "5m"
+    },
+    {
+     "type": "discard",
+     "actor": 0,
+     "tile": "8s",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 1,
+     "tile": "7m"
+    },
+    {
+     "type": "discard",
+     "actor": 1,
+     "tile": "7p",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 2,
+     "tile": "8m"
+    },
+    {
+     "type": "discard",
+     "actor": 2,
+     "tile": "2m",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 3,
+     "tile": "5s"
+    },
+    {
+     "type": "discard",
+     "actor": 3,
+     "tile": "5s",
+     "tsumogiri": true
+    },
+    {
+     "type": "draw",
+     "actor": 0,
+     "tile": "7z"
+    },
+    {
+     "type": "discard",
+     "actor": 0,
+     "tile": "4p",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 1,
+     "tile": "6p"
+    },
+    {
+     "type": "discard",
+     "actor": 1,
+     "tile": "6z",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 2,
+     "tile": "6z"
+    },
+    {
+     "type": "discard",
+     "actor": 2,
+     "tile": "9s",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 3,
+     "tile": "1p"
+    },
+    {
+     "type": "discard",
+     "actor": 3,
+     "tile": "8p",
+     "tsumogiri": false
+    },
+    {
+     "type": "call",
+     "actor": 0,
+     "meld_type": "pon",
+     "tiles": [
+      "8p",
+      "8p",
+      "8p"
+     ],
+     "from": 3,
+     "called_tile": "8p"
+    },
+    {
+     "type": "discard",
+     "actor": 0,
+     "tile": "2s",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 1,
+     "tile": "1z"
+    },
+    {
+     "type": "discard",
+     "actor": 1,
+     "tile": "0m",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 2,
+     "tile": "3z"
+    },
+    {
+     "type": "discard",
+     "actor": 2,
+     "tile": "3z",
+     "tsumogiri": true
+    },
+    {
+     "type": "draw",
+     "actor": 3,
+     "tile": "3z"
+    },
+    {
+     "type": "discard",
+     "actor": 3,
+     "tile": "1p",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 0,
+     "tile": "2s"
+    },
+    {
+     "type": "discard",
+     "actor": 0,
+     "tile": "6p",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 1,
+     "tile": "4p"
+    },
+    {
+     "type": "discard",
+     "actor": 1,
+     "tile": "8p",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 2,
+     "tile": "2s"
+    },
+    {
+     "type": "discard",
+     "actor": 2,
+     "tile": "5p",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 3,
+     "tile": "3s"
+    },
+    {
+     "type": "discard",
+     "actor": 3,
+     "tile": "3z",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 0,
+     "tile": "9p"
+    },
+    {
+     "type": "discard",
+     "actor": 0,
+     "tile": "2s",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 1,
+     "tile": "6s"
+    },
+    {
+     "type": "discard",
+     "actor": 1,
+     "tile": "1z",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 2,
+     "tile": "3s"
+    },
+    {
+     "type": "discard",
+     "actor": 2,
+     "tile": "3p",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 3,
+     "tile": "6z"
+    },
+    {
+     "type": "discard",
+     "actor": 3,
+     "tile": "6z",
+     "tsumogiri": true
+    },
+    {
+     "type": "draw",
+     "actor": 0,
+     "tile": "7m"
+    },
+    {
+     "type": "discard",
+     "actor": 0,
+     "tile": "1m",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 1,
+     "tile": "7m"
+    },
+    {
+     "type": "discard",
+     "actor": 1,
+     "tile": "5s",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 2,
+     "tile": "3m"
+    },
+    {
+     "type": "discard",
+     "actor": 2,
+     "tile": "6s",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 3,
+     "tile": "8m"
+    },
+    {
+     "type": "discard",
+     "actor": 3,
+     "tile": "1z",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 0,
+     "tile": "5z"
+    },
+    {
+     "type": "discard",
+     "actor": 0,
+     "tile": "7m",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 1,
+     "tile": "9s"
+    },
+    {
+     "type": "discard",
+     "actor": 1,
+     "tile": "9s",
+     "tsumogiri": true
+    },
+    {
+     "type": "draw",
+     "actor": 2,
+     "tile": "6m"
+    },
+    {
+     "type": "discard",
+     "actor": 2,
+     "tile": "8m",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 3,
+     "tile": "3z"
+    },
+    {
+     "type": "discard",
+     "actor": 3,
+     "tile": "3z",
+     "tsumogiri": true
+    },
+    {
+     "type": "draw",
+     "actor": 0,
+     "tile": "7p"
+    },
+    {
+     "type": "discard",
+     "actor": 0,
+     "tile": "9s",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 1,
+     "tile": "4p"
+    },
+    {
+     "type": "discard",
+     "actor": 1,
+     "tile": "2p",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 2,
+     "tile": "2p"
+    },
+    {
+     "type": "discard",
+     "actor": 2,
+     "tile": "1z",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 3,
+     "tile": "9p"
+    },
+    {
+     "type": "discard",
+     "actor": 3,
+     "tile": "8m",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 0,
+     "tile": "6m"
+    },
+    {
+     "type": "discard",
+     "actor": 0,
+     "tile": "7z",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 1,
+     "tile": "6p"
+    },
+    {
+     "type": "discard",
+     "actor": 1,
+     "tile": "8m",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 2,
+     "tile": "7s"
+    },
+    {
+     "type": "discard",
+     "actor": 2,
+     "tile": "6z",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 3,
+     "tile": "4m"
+    },
+    {
+     "type": "discard",
+     "actor": 3,
+     "tile": "4m",
+     "tsumogiri": true
+    },
+    {
+     "type": "draw",
+     "actor": 0,
+     "tile": "3m"
+    },
+    {
+     "type": "discard",
+     "actor": 0,
+     "tile": "7p",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 1,
+     "tile": "1z"
+    },
+    {
+     "type": "discard",
+     "actor": 1,
+     "tile": "4m",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 2,
+     "tile": "5m"
+    },
+    {
+     "type": "discard",
+     "actor": 2,
+     "tile": "7s",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 3,
+     "tile": "1m"
+    },
+    {
+     "type": "discard",
+     "actor": 3,
+     "tile": "1m",
+     "tsumogiri": true
+    },
+    {
+     "type": "draw",
+     "actor": 0,
+     "tile": "4z"
+    },
+    {
+     "type": "discard",
+     "actor": 0,
+     "tile": "4z",
+     "tsumogiri": true
+    },
+    {
+     "type": "draw",
+     "actor": 1,
+     "tile": "3s"
+    },
+    {
+     "type": "discard",
+     "actor": 1,
+     "tile": "4p",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 2,
+     "tile": "4m"
+    },
+    {
+     "type": "discard",
+     "actor": 2,
+     "tile": "7z",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 3,
+     "tile": "2z"
+    },
+    {
+     "type": "discard",
+     "actor": 3,
+     "tile": "2z",
+     "tsumogiri": true
+    },
+    {
+     "type": "draw",
+     "actor": 0,
+     "tile": "7p"
+    },
+    {
+     "type": "discard",
+     "actor": 0,
+     "tile": "7p",
+     "tsumogiri": true
+    },
+    {
+     "type": "draw",
+     "actor": 1,
+     "tile": "9p"
+    },
+    {
+     "type": "discard",
+     "actor": 1,
+     "tile": "5s",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 2,
+     "tile": "7z"
+    },
+    {
+     "type": "discard",
+     "actor": 2,
+     "tile": "7z",
+     "tsumogiri": true
+    },
+    {
+     "type": "draw",
+     "actor": 3,
+     "tile": "2m"
+    },
+    {
+     "type": "discard",
+     "actor": 3,
+     "tile": "2m",
+     "tsumogiri": true
+    },
+    {
+     "type": "draw",
+     "actor": 0,
+     "tile": "6p"
+    },
+    {
+     "type": "discard",
+     "actor": 0,
+     "tile": "6p",
+     "tsumogiri": true
+    },
+    {
+     "type": "draw",
+     "actor": 1,
+     "tile": "2s"
+    },
+    {
+     "type": "discard",
+     "actor": 1,
+     "tile": "1z",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 2,
+     "tile": "0p"
+    },
+    {
+     "type": "discard",
+     "actor": 2,
+     "tile": "2p",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 3,
+     "tile": "7s"
+    },
+    {
+     "type": "discard",
+     "actor": 3,
+     "tile": "9p",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 0,
+     "tile": "6s"
+    },
+    {
+     "type": "discard",
+     "actor": 0,
+     "tile": "4m",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 1,
+     "tile": "6z"
+    },
+    {
+     "type": "discard",
+     "actor": 1,
+     "tile": "6z",
+     "tsumogiri": true
+    },
+    {
+     "type": "draw",
+     "actor": 2,
+     "tile": "2m"
+    },
+    {
+     "type": "discard",
+     "actor": 2,
+     "tile": "0p",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 3,
+     "tile": "0s"
+    },
+    {
+     "type": "discard",
+     "actor": 3,
+     "tile": "7s",
+     "tsumogiri": false
+    },
+    {
+     "type": "riichi",
+     "actor": 3
+    },
+    {
+     "type": "draw",
+     "actor": 0,
+     "tile": "2z"
+    },
+    {
+     "type": "discard",
+     "actor": 0,
+     "tile": "5z",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 1,
+     "tile": "8m"
+    },
+    {
+     "type": "discard",
+     "actor": 1,
+     "tile": "9p",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 2,
+     "tile": "7s"
+    },
+    {
+     "type": "discard",
+     "actor": 2,
+     "tile": "4s",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 3,
+     "tile": "8s"
+    },
+    {
+     "type": "discard",
+     "actor": 3,
+     "tile": "8s",
+     "tsumogiri": true
+    },
+    {
+     "type": "draw",
+     "actor": 0,
+     "tile": "5m"
+    },
+    {
+     "type": "discard",
+     "actor": 0,
+     "tile": "2z",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 1,
+     "tile": "3m"
+    },
+    {
+     "type": "discard",
+     "actor": 1,
+     "tile": "3m",
+     "tsumogiri": true
+    },
+    {
+     "type": "draw",
+     "actor": 2,
+     "tile": "5p"
+    },
+    {
+     "type": "discard",
+     "actor": 2,
+     "tile": "5p",
+     "tsumogiri": true
+    },
+    {
+     "type": "ryukyoku",
+     "reason": "exhaustive"
+    }
+   ]
+  },
+  {
+   "round_wind": 0,
+   "round_number": 3,
+   "honba": 1,
+   "kyotaku": 1,
+   "dealer": 2,
+   "scores": [
+    25000,
+    25000,
+    25000,
+    25000
+   ],
+   "hands": [
+    [
+     "1m",
+     "1p",
+     "2p",
+     "3s",
+     "3z",
+     "4p",
+     "5m",
+     "6m",
+     "6s",
+     "6z",
+     "7p",
+     "7z",
+     "8s"
+    ],
+    [
+     "1z",
+     "2p",
+     "2s",
+     "3p",
+     "3s",
+     "3z",
+     "4m",
+     "5m",
+     "6s",
+     "8m",
+     "8m",
+     "8p",
+     "9m"
+    ],
+    [
+     "0s",
+     "1p",
+     "1p",
+     "2m",
+     "2z",
+     "3s",
+     "4p",
+     "5p",
+     "6z",
+     "7s",
+     "8m",
+     "9m",
+     "9s"
+    ],
+    [
+     "1m",
+     "1s",
+     "1z",
+     "3m",
+     "3z",
+     "4m",
+     "4m",
+     "4z",
+     "6p",
+     "7m",
+     "8m",
+     "9m",
+     "9p"
+    ]
+   ],
+   "dora_indicators": [
+    "8s"
+   ],
+   "events": [
+    {
+     "type": "draw",
+     "actor": 2,
+     "tile": "9s"
+    },
+    {
+     "type": "discard",
+     "actor": 2,
+     "tile": "3s",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 3,
+     "tile": "1p"
+    },
+    {
+     "type": "discard",
+     "actor": 3,
+     "tile": "1s",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 0,
+     "tile": "9s"
+    },
+    {
+     "type": "discard",
+     "actor": 0,
+     "tile": "4p",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 1,
+     "tile": "3m"
+    },
+    {
+     "type": "discard",
+     "actor": 1,
+     "tile": "8m",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 2,
+     "tile": "2z"
+    },
+    {
+     "type": "discard",
+     "actor": 2,
+     "tile": "2z",
+     "tsumogiri": true
+    },
+    {
+     "type": "draw",
+     "actor": 3,
+     "tile": "2z"
+    },
+    {
+     "type": "discard",
+     "actor": 3,
+     "tile": "6p",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 0,
+     "tile": "1s"
+    },
+    {
+     "type": "discard",
+     "actor": 0,
+     "tile": "7z",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 1,
+     "tile": "5s"
+    },
+    {
+     "type": "discard",
+     "actor": 1,
+     "tile": "3z",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 2,
+     "tile": "4s"
+    },
+    {
+     "type": "discard",
+     "actor": 2,
+     "tile": "9s",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 3,
+     "tile": "0p"
+    },
+    {
+     "type": "discard",
+     "actor": 3,
+     "tile": "1p",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 0,
+     "tile": "7s"
+    },
+    {
+     "type": "discard",
+     "actor": 0,
+     "tile": "6z",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 1,
+     "tile": "5z"
+    },
+    {
+     "type": "discard",
+     "actor": 1,
+     "tile": "2p",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 2,
+     "tile": "6m"
+    },
+    {
+     "type": "discard",
+     "actor": 2,
+     "tile": "5p",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 3,
+     "tile": "1m"
+    },
+    {
+     "type": "discard",
+     "actor": 3,
+     "tile": "3m",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 0,
+     "tile": "4m"
+    },
+    {
+     "type": "discard",
+     "actor": 0,
+     "tile": "6s",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 1,
+     "tile": "2m"
+    },
+    {
+     "type": "discard",
+     "actor": 1,
+     "tile": "9m",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 2,
+     "tile": "9p"
+    },
+    {
+     "type": "discard",
+     "actor": 2,
+     "tile": "6m",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 3,
+     "tile": "5z"
+    },
+    {
+     "type": "discard",
+     "actor": 3,
+     "tile": "2z",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 0,
+     "tile": "1z"
+    },
+    {
+     "type": "discard",
+     "actor": 0,
+     "tile": "3z",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 1,
+     "tile": "6p"
+    },
+    {
+     "type": "discard",
+     "actor": 1,
+     "tile": "8m",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 2,
+     "tile": "6m"
+    },
+    {
+     "type": "discard",
+     "actor": 2,
+     "tile": "2z",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 3,
+     "tile": "1z"
+    },
+    {
+     "type": "discard",
+     "actor": 3,
+     "tile": "9p",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 0,
+     "tile": "0m"
+    },
+    {
+     "type": "discard",
+     "actor": 0,
+     "tile": "6m",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 1,
+     "tile": "7z"
+    },
+    {
+     "type": "discard",
+     "actor": 1,
+     "tile": "5m",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 2,
+     "tile": "2m"
+    },
+    {
+     "type": "discard",
+     "actor": 2,
+     "tile": "6z",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 3,
+     "tile": "3s"
+    },
+    {
+     "type": "discard",
+     "actor": 3,
+     "tile": "4m",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 0,
+     "tile": "2s"
+    },
+    {
+     "type": "discard",
+     "actor": 0,
+     "tile": "1z",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 1,
+     "tile": "3z"
+    },
+    {
+     "type": "discard",
+     "actor": 1,
+     "tile": "3p",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 2,
+     "tile": "8p"
+    },
+    {
+     "type": "discard",
+     "actor": 2,
+     "tile": "9p",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 3,
+     "tile": "7z"
+    },
+    {
+     "type": "discard",
+     "actor": 3,
+     "tile": "5z",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 0,
+     "tile": "7s"
+    },
+    {
+     "type": "discard",
+     "actor": 0,
+     "tile": "5m",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 1,
+     "tile": "4z"
+    },
+    {
+     "type": "discard",
+     "actor": 1,
+     "tile": "3z",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 2,
+     "tile": "3p"
+    },
+    {
+     "type": "discard",
+     "actor": 2,
+     "tile": "4s",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 3,
+     "tile": "7m"
+    },
+    {
+     "type": "discard",
+     "actor": 3,
+     "tile": "0p",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 0,
+     "tile": "5p"
+    },
+    {
+     "type": "discard",
+     "actor": 0,
+     "tile": "8s",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 1,
+     "tile": "1m"
+    },
+    {
+     "type": "discard",
+     "actor": 1,
+     "tile": "5z",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 2,
+     "tile": "9p"
+    },
+    {
+     "type": "discard",
+     "actor": 2,
+     "tile": "9p",
+     "tsumogiri": true
+    },
+    {
+     "type": "draw",
+     "actor": 3,
+     "tile": "6z"
+    },
+    {
+     "type": "discard",
+     "actor": 3,
+     "tile": "3s",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 0,
+     "tile": "2m"
+    },
+    {
+     "type": "discard",
+     "actor": 0,
+     "tile": "7p",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 1,
+     "tile": "7z"
+    },
+    {
+     "type": "discard",
+     "actor": 1,
+     "tile": "3m",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 2,
+     "tile": "2p"
+    },
+    {
+     "type": "discard",
+     "actor": 2,
+     "tile": "9m",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 3,
+     "tile": "7p"
+    },
+    {
+     "type": "discard",
+     "actor": 3,
+     "tile": "7m",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 0,
+     "tile": "4z"
+    },
+    {
+     "type": "discard",
+     "actor": 0,
+     "tile": "9s",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 1,
+     "tile": "4s"
+    },
+    {
+     "type": "discard",
+     "actor": 1,
+     "tile": "4m",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 2,
+     "tile": "5z"
+    },
+    {
+     "type": "discard",
+     "actor": 2,
+     "tile": "0s",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 3,
+     "tile": "5s"
+    },
+    {
+     "type": "discard",
+     "actor": 3,
+     "tile": "4z",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 0,
+     "tile": "3m"
+    },
+    {
+     "type": "discard",
+     "actor": 0,
+     "tile": "4z",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 1,
+     "tile": "2p"
+    },
+    {
+     "type": "discard",
+     "actor": 1,
+     "tile": "4s",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 2,
+     "tile": "1s"
+    },
+    {
+     "type": "discard",
+     "actor": 2,
+     "tile": "8p",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 3,
+     "tile": "6z"
+    },
+    {
+     "type": "discard",
+     "actor": 3,
+     "tile": "7z",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 0,
+     "tile": "4s"
+    },
+    {
+     "type": "discard",
+     "actor": 0,
+     "tile": "1s",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 1,
+     "tile": "6p"
+    },
+    {
+     "type": "discard",
+     "actor": 1,
+     "tile": "6p",
+     "tsumogiri": true
+    },
+    {
+     "type": "draw",
+     "actor": 2,
+     "tile": "5m"
+    },
+    {
+     "type": "discard",
+     "actor": 2,
+     "tile": "5m",
+     "tsumogiri": true
+    },
+    {
+     "type": "draw",
+     "actor": 3,
+     "tile": "2z"
+    },
+    {
+     "type": "discard",
+     "actor": 3,
+     "tile": "4m",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 0,
+     "tile": "4z"
+    },
+    {
+     "type": "discard",
+     "actor": 0,
+     "tile": "4z",
+     "tsumogiri": true
+    },
+    {
+     "type": "draw",
+     "actor": 1,
+     "tile": "5z"
+    },
+    {
+     "type": "discard",
+     "actor": 1,
+     "tile": "7z",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 2,
+     "tile": "9s"
+    },
+    {
+     "type": "discard",
+     "actor": 2,
+     "tile": "9s",
+     "tsumogiri": true
+    },
+    {
+     "type": "draw",
+     "actor": 3,
+     "tile": "3p"
+    },
+    {
+     "type": "discard",
+     "actor": 3,
+     "tile": "3p",
+     "tsumogiri": true
+    },
+    {
+     "type": "draw",
+     "actor": 0,
+     "tile": "8s"
+    },
+    {
+     "type": "discard",
+     "actor": 0,
+     "tile": "5p",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 1,
+     "tile": "8s"
+    },
+    {
+     "type": "discard",
+     "actor": 1,
+     "tile": "7z",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 2,
+     "tile": "7m"
+    },
+    {
+     "type": "discard",
+     "actor": 2,
+     "tile": "5z",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 3,
+     "tile": "1s"
+    },
+    {
+     "type": "discard",
+     "actor": 3,
+     "tile": "5s",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 0,
+     "tile": "2s"
+    },
+    {
+     "type": "discard",
+     "actor": 0,
+     "tile": "2s",
+     "tsumogiri": true
+    },
+    {
+     "type": "draw",
+     "actor": 1,
+     "tile": "6s"
+    },
+    {
+     "type": "discard",
+     "actor": 1,
+     "tile": "5s",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 2,
+     "tile": "5p"
+    },
+    {
+     "type": "discard",
+     "actor": 2,
+     "tile": "1p",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 3,
+     "tile": "7m"
+    },
+    {
+     "type": "discard",
+     "actor": 3,
+     "tile": "7m",
+     "tsumogiri": true
+    },
+    {
+     "type": "draw",
+     "actor": 0,
+     "tile": "7p"
+    },
+    {
+     "type": "discard",
+     "actor": 0,
+     "tile": "7p",
+     "tsumogiri": true
+    },
+    {
+     "type": "draw",
+     "actor": 1,
+     "tile": "2s"
+    },
+    {
+     "type": "discard",
+     "actor": 1,
+     "tile": "4z",
+     "tsumogiri": false
+    },
+    {
+     "type": "draw",
+     "actor": 2,
+     "tile": "3m"
+    },
+    {
+     "type": "discard",
+     "actor": 2,
+     "tile": "3m",
+     "tsumogiri": true
+    },
+    {
+     "type": "ryukyoku",
+     "reason": "exhaustive"
+    }
+   ]
+  }
+ ]
+}

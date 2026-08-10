@@ -1,4 +1,52 @@
-# mahjong-cpp
+# mahjong-analizer (打牌期待値解析ツール)
+
+[nekobean/mahjong-cpp](https://github.com/nekobean/mahjong-cpp) のフォークです。
+本家は日本のリーチ麻雀の点数計算・期待値計算を行う C++ ライブラリで、このフォークでは
+その期待値計算を使って牌譜から打牌を解析するツールを追加しています。
+
+ライブラリ本体のアルゴリズムと実装はすべて本家によるものです。
+
+## このフォークでの変更点
+
+追加したもの:
+
+| パス | 内容 |
+| --- | --- |
+| `src/tools/majsoul/` | 打牌期待値解析ツール `analyze_majsoul_paipu` |
+| `docs/majsoul_analyzer.md` | 上記ツールのドキュメント |
+| `data/testcase/majsoul_sample_replay.json` | 動作確認用のサンプル牌譜 |
+
+本家のコードへの変更:
+
+| ファイル | 変更内容 |
+| --- | --- |
+| `src/mahjong/types/round_event.hpp` | 三人麻雀の北抜きを表す `NukiEvent` を `RoundEvent` に追加 |
+| `src/tools/CMakeLists.txt` | `majsoul` サブディレクトリを追加 |
+| `src/samples/CMakeLists.txt` | 並列ビルド時にデータファイルのコピーが競合してビルドが失敗する問題を修正 |
+
+`src/mahjong/` 以下のライブラリコードは、上記 1 ファイルを除いて変更していません。
+
+## 打牌期待値解析ツール
+
+保存した牌譜を渡すと、対象プレイヤーの打牌ごとに「その打牌の期待値」「全候補中での
+期待値順位」「期待値を最大化する打牌」を麻雀牌文字で出力します。
+
+```bash
+analyze_majsoul_paipu 牌譜.html --html report.html
+```
+
+入力は [mjai-reviewer](https://mjai.ekyu.moe/) の HTML レポート、または天鳳 JSON 形式の
+ログです。実行ファイルにドラッグ&ドロップするだけでも解析でき、Python などの外部依存は
+ありません。使い方と解析の前提は
+[docs/majsoul_analyzer.md](docs/majsoul_analyzer.md)を参照してください。
+
+## ライセンス
+
+本家と同じ **GPL-3.0** です。詳細はLICENSEを参照してください。
+
+---
+
+以下は本家 mahjong-cpp の README の内容です。
 
 ## About
 
