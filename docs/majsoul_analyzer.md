@@ -51,6 +51,27 @@ cmake --build . --config Release
 実行時にこの 4 ファイルを**自分と同じフォルダ**から読み込むため、配布するときは
 実行ファイルと合わせた 5 ファイルをフォルダごと配置してください。
 
+### 配布用ビルド (Windows)
+
+既定のビルドは MSVC ランタイム DLL に依存するため、Visual C++ 再頒布可能パッケージが
+入っていない環境では起動できません。配布用には、CRT ごと静的リンクした実行ファイルを
+作ります。`runtime-link=static` でビルドした Boost が必要です。
+
+```bash
+# Boost (filesystem, system) を静的 CRT でビルドしておく
+b2 --with-filesystem --with-system variant=release link=static runtime-link=static ^
+   address-model=64 --prefix=<boost-prefix> install
+
+cmake -S . -B build-release -DCMAKE_BUILD_TYPE=Release ^
+      -DCMAKE_MSVC_RUNTIME_LIBRARY=MultiThreaded -DBoost_USE_STATIC_RUNTIME=ON ^
+      -DCMAKE_PREFIX_PATH=<boost-prefix>/lib/cmake ^
+      -DBUILD_SERVER=OFF -DBUILD_TEST=OFF -DBUILD_SAMPLES=OFF -DBUILD_TOOLS=ON
+cmake --build build-release --target analyze_majsoul_paipu
+```
+
+こうすると依存は `KERNEL32.dll` と `SHELL32.dll` だけになり、追加のランタイムなしで
+動作します。
+
 ## 使い方
 
 ### ドラッグ&ドロップ

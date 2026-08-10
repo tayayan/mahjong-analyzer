@@ -23,6 +23,7 @@
 | `src/mahjong/types/round_event.hpp` | 三人麻雀の北抜きを表す `NukiEvent` を `RoundEvent` に追加 |
 | `src/tools/CMakeLists.txt` | `majsoul` サブディレクトリを追加 |
 | `src/samples/CMakeLists.txt` | 並列ビルド時にデータファイルのコピーが競合してビルドが失敗する問題を修正 |
+| `CMakeLists.txt` | `Boost_USE_STATIC_RUNTIME` を固定せず、指定があれば尊重するよう変更（配布用の静的リンクビルド向け） |
 
 `src/mahjong/` 以下のライブラリコードは、上記 1 ファイルを除いて変更していません。
 

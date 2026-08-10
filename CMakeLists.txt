@@ -32,7 +32,12 @@ endif()
 # Boost
 set(Boost_USE_STATIC_LIBS ON)
 set(Boost_USE_MULTITHREADED ON)
-set(Boost_USE_STATIC_RUNTIME OFF)
+# Left as a default rather than forced, so a self-contained build is possible with
+# -DBoost_USE_STATIC_RUNTIME=ON -DCMAKE_MSVC_RUNTIME_LIBRARY=MultiThreaded and a Boost
+# built with runtime-link=static.
+if(NOT DEFINED Boost_USE_STATIC_RUNTIME)
+  set(Boost_USE_STATIC_RUNTIME OFF)
+endif()
 if(DEFINED ENV{BOOST_ROOT})
   list(PREPEND CMAKE_PREFIX_PATH "$ENV{BOOST_ROOT}/stage/lib/cmake")
 endif()
