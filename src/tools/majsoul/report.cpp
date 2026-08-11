@@ -286,9 +286,13 @@ void write_text_report(std::ostream &os, const GameRecord &game,
                       summary.num_skipped_opponent_riichi);
     if (summary.num_narrowed_search > 0) {
         os << fmt::format(
-            MAJSOUL_TEXT("narrowed search   : {} (5+ shanten, no extra range)\n",
-                         u8"探索を縮小      : {} (5向聴以上)\n"),
+            MAJSOUL_TEXT("narrowed search   : {}\n", u8"探索を縮小      : {}\n"),
             summary.num_narrowed_search);
+    }
+    if (summary.num_widened_search > 0) {
+        os << fmt::format(
+            MAJSOUL_TEXT("widened search    : {}\n", u8"探索を拡大      : {}\n"),
+            summary.num_widened_search);
     }
     if (summary.num_skipped_other > 0) {
         os << fmt::format(MAJSOUL_TEXT("skipped (other)   : {}\n",

@@ -89,7 +89,14 @@ Analysis:
                          Once an opponent has declared riichi, skip decisions with a
                          shanten number above this (default 1): folding rather than
                          pushing is the normal choice there. Pass 6 to disable.
-  --extra <n>            Search range of the expected score calculator (default 1).
+  --extra <n>            Base search range of the expected score calculator (default 1).
+                         The range is widened by one at or below --wide-search-shanten
+                         and dropped to zero at or above --narrow-search-shanten, so
+                         the time goes to the decisions that are close calls.
+  --wide-search-shanten <n>
+                         Widen the search at or below this shanten number (default 1).
+  --narrow-search-shanten <n>
+                         Drop the search range at or above this shanten (default 4).
   --include-riichi       Also evaluate forced discards made after declaring riichi.
   --simple-wall          Only remove the analyzed hand, its melds and the dora
                          indicators from the wall, ignoring every player's discards.
@@ -164,6 +171,13 @@ Options parse_options(const std::vector<std::string> &args, bool &show_help)
         }
         else if (arg == "--extra") {
             options.analyzer.calc.extra = parse_int(next_argument(args, i), arg);
+        }
+        else if (arg == "--wide-search-shanten") {
+            options.analyzer.wide_search_shanten = parse_int(next_argument(args, i), arg);
+        }
+        else if (arg == "--narrow-search-shanten") {
+            options.analyzer.narrow_search_shanten =
+                parse_int(next_argument(args, i), arg);
         }
         else if (arg == "--include-riichi") {
             options.analyzer.include_riichi = true;

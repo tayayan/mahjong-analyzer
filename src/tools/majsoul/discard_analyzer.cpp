@@ -111,6 +111,25 @@ int count_unseen(const MergedCount &wall)
 }
 
 /**
+ * @brief Returns the search range to use for a hand at @p shanten.
+ *
+ * The cost of the search grows steeply with shanten + extra, and so does its value near
+ * tenpai, so the range is widened close to tenpai and dropped far from it.
+ */
+int search_range(const AnalyzerConfig &config, const int shanten)
+{
+    int extra = config.calc.extra;
+    if (shanten <= config.wide_search_shanten) {
+        extra = config.calc.extra + 1;
+    }
+    else if (shanten >= config.narrow_search_shanten) {
+        extra = 0;
+    }
+
+    return std::clamp(extra, 0, std::max(0, config.max_search_depth - shanten));
+}
+
+/**
  * @brief A decision together with the wall it must be evaluated against.
  */
 struct PendingDecision
@@ -366,10 +385,9 @@ void evaluate(const GameRecord &game, const AnalyzerConfig &config,
     }
 
     ExpectedScoreCalculator::Config calc_config = config.calc;
-    if (decision.shanten >= config.narrow_search_shanten) {
-        decision.narrowed_search = true;
-        calc_config.extra = 0;
-    }
+    calc_config.extra = search_range(config, decision.shanten);
+    decision.narrowed_search = calc_config.extra < config.calc.extra;
+    decision.widened_search = calc_config.extra > config.calc.extra;
     calc_config.t_min = decision.turn;
     calc_config.t_max = MaxTurn;
     calc_config.sum = 0; // derived from the wall
@@ -434,6 +452,9 @@ AnalysisSummary summarize(const std::vector<DiscardDecision> &decisions)
         ++summary.num_evaluated;
         if (decision.narrowed_search) {
             ++summary.num_narrowed_search;
+        }
+        if (decision.widened_search) {
+            ++summary.num_widened_search;
         }
         summary.total_loss += decision.exp_score_loss;
         rank_sum += decision.actual_rank;

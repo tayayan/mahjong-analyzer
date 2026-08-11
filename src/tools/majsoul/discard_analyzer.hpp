@@ -44,16 +44,37 @@ struct AnalyzerConfig
     int max_shanten_under_riichi = 1;
 
     /*!
+     * At or below this shanten number the search range is widened by one.
+     *
+     * Close to tenpai the discard is often a close call, and the wider search changes
+     * which discard comes out on top in roughly one decision in twelve. Widening it
+     * further is not worth the wait: going from a range of 2 to 3 was measured at
+     * twenty-one times the run time to change one more decision in twenty-four, by
+     * which point the expected score has all but converged.
+     */
+    int wide_search_shanten = 1;
+
+    /*!
      * At or above this shanten number the expected score is calculated without the
      * extra search range.
      *
      * The calculator explores every hand within `calc.extra` of the current shanten
-     * number, and that search explodes far from tenpai: a 5-shanten hand has been
-     * measured at over three minutes, and it exhausts the stack unless the process is
-     * given a gigabyte of it. Such discards are not close calls, so the search is
-     * narrowed rather than skipped. Raise this to disable the rule.
+     * number, and that search explodes far from tenpai. On a measured hanchan the five
+     * 4-shanten decisions took 52 of the 56 seconds the whole game needed, while the
+     * 37 decisions at 2 shanten or better took one second between them. Those distant
+     * discards are not close calls, so the budget is spent nearer to tenpai instead.
      */
-    int narrow_search_shanten = 5;
+    int narrow_search_shanten = 4;
+
+    /*!
+     * Hard ceiling on shanten + extra.
+     *
+     * Beyond this the search is not merely slow: a 5-shanten hand with the default
+     * extra range has been measured at over three minutes, and it exhausts a 100 MB
+     * stack and terminates the process. This cap keeps any combination of the settings
+     * above out of that territory.
+     */
+    int max_search_depth = 5;
 
     /*! Evaluate forced discards made after declaring riichi. */
     bool include_riichi = false;
@@ -120,8 +141,11 @@ struct DiscardDecision
     /*! At least one opponent had declared riichi. */
     bool opponent_riichi = false;
 
-    /*! The expected score was calculated without the extra search range. */
+    /*! The expected score was calculated with a smaller search range than requested. */
     bool narrowed_search = false;
+
+    /*! The expected score was calculated with a wider search range than requested. */
+    bool widened_search = false;
 
     /*! Number of tiles not visible to the player. */
     int unseen_tiles = 0;
@@ -158,6 +182,7 @@ struct AnalysisSummary
     int num_skipped_shanten = 0;
     int num_skipped_opponent_riichi = 0;
     int num_narrowed_search = 0;
+    int num_widened_search = 0;
     int num_skipped_other = 0;
     double total_loss = 0.0;
     double mean_loss = 0.0;
