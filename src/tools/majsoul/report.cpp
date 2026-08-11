@@ -128,27 +128,40 @@ std::string format_necessary(const DiscardCandidate &candidate)
 }
 
 /**
- * @brief Returns the decisions with the largest expected score loss, worst first.
+ * @brief Returns indices into result.decisions with the largest expected score loss,
+ *        worst first.
+ *
+ * Indices rather than pointers, because the HTML report turns them into anchors.
  */
-std::vector<const DiscardDecision *> worst_decisions(const AnalysisResult &result,
-                                                     const std::size_t count)
+std::vector<std::size_t> worst_decisions(const AnalysisResult &result,
+                                         const std::size_t count)
 {
-    std::vector<const DiscardDecision *> ret;
-    for (const auto &decision : result.decisions) {
+    std::vector<std::size_t> ret;
+    for (std::size_t i = 0; i < result.decisions.size(); ++i) {
+        const auto &decision = result.decisions[i];
         if (decision.evaluated() && decision.actual_rank > 1) {
-            ret.push_back(&decision);
+            ret.push_back(i);
         }
     }
 
     std::sort(ret.begin(), ret.end(),
-              [](const DiscardDecision *a, const DiscardDecision *b) {
-                  return a->exp_score_loss > b->exp_score_loss;
+              [&result](const std::size_t a, const std::size_t b) {
+                  return result.decisions[a].exp_score_loss >
+                         result.decisions[b].exp_score_loss;
               });
 
     if (ret.size() > count) {
         ret.resize(count);
     }
     return ret;
+}
+
+/**
+ * @brief HTML id of a decision, linked to from the largest-loss table.
+ */
+std::string decision_anchor(const std::size_t index)
+{
+    return fmt::format("d{}", index);
 }
 
 std::string decision_headline(const DiscardDecision &decision,
@@ -315,15 +328,16 @@ void write_text_report(std::ostream &os, const GameRecord &game,
     const auto worst = worst_decisions(result, 5);
     if (!worst.empty()) {
         os << MAJSOUL_TEXT("\n=== Largest losses ===\n", u8"\n=== 損失の大きい局面 ===\n");
-        for (const auto *decision : worst) {
+        for (const std::size_t index : worst) {
+            const auto &decision = result.decisions[index];
             os << fmt::format(
                 MAJSOUL_TEXT("{} turn {:>2}  {} -> {}  loss {:.2f}  (rank {}/{})\n",
                              u8"{} {:>2}巡目  実打 {} -> 最善 {}  損失 {:.2f}  (順位 {}/{})\n"),
-                format_round(decision->round), decision->turn,
-                to_glyph(decision->actual_tile, glyphs),
-                to_glyph(decision->candidates.front().tile, glyphs),
-                decision->exp_score_loss,
-                decision->actual_rank, decision->candidates.size());
+                format_round(decision.round), decision.turn,
+                to_glyph(decision.actual_tile, glyphs),
+                to_glyph(decision.candidates.front().tile, glyphs),
+                decision.exp_score_loss,
+                decision.actual_rank, decision.candidates.size());
         }
     }
 }
@@ -384,6 +398,23 @@ code { font-family:ui-monospace,SFMono-Regular,Consolas,monospace; }
 details { margin:4px 0 12px; }
 summary { cursor:pointer; }
 .num { font-variant-numeric:tabular-nums; }
+
+/* Rows of the largest-loss table jump to the decision further down the page. */
+tr.jump { cursor:pointer; }
+tr.jump:hover td { background:color-mix(in srgb, var(--warn) 10%, transparent); }
+tr.jump a { text-decoration:none; }
+tr.jump a:hover { text-decoration:underline; }
+/* Leave room above the decision so it is not flush against the window edge. */
+details.decision { scroll-margin-top:16px; }
+details.flash > summary {
+  animation:flash 1.6s ease-out;
+  border-radius:6px;
+}
+@keyframes flash {
+  from { background:color-mix(in srgb, var(--warn) 45%, transparent); }
+  to   { background:transparent; }
+}
+@media (prefers-reduced-motion:reduce) { details.flash > summary { animation:none; } }
 )";
 
     // The Mahjong Tiles block only renders where a symbol font covers it, so name the
@@ -444,22 +475,28 @@ summary { cursor:pointer; }
             ofs << "<th>" << escape_html(header) << "</th>";
         }
         ofs << "</tr></thead><tbody>\n";
-        for (const auto *decision : worst) {
-            ofs << "<tr class=\"loss\"><td class=\"l\">"
-                << escape_html(format_round(decision->round)) << "</td><td>"
-                << decision->turn << "</td><td><span class=\"tile\">"
-                << to_glyph(decision->actual_tile, glyphs)
+        for (const std::size_t index : worst) {
+            const auto &decision = result.decisions[index];
+            const std::string anchor = decision_anchor(index);
+            // The whole row is clickable, but the round name stays a real link so the
+            // row is reachable by keyboard and survives with scripting disabled.
+            ofs << "<tr class=\"loss jump\" data-target=\"" << anchor
+                << "\"><td class=\"l\"><a href=\"#" << anchor << "\">"
+                << escape_html(format_round(decision.round)) << "</a></td><td>"
+                << decision.turn << "</td><td><span class=\"tile\">"
+                << to_glyph(decision.actual_tile, glyphs)
                 << "</span></td><td><span class=\"tile\">"
-                << to_glyph(decision->candidates.front().tile, glyphs)
-                << "</span></td><td>" << decision->actual_rank << " / "
-                << decision->candidates.size() << "</td><td class=\"num\">"
-                << fmt::format("{:.1f}", decision->exp_score_loss) << "</td></tr>\n";
+                << to_glyph(decision.candidates.front().tile, glyphs)
+                << "</span></td><td>" << decision.actual_rank << " / "
+                << decision.candidates.size() << "</td><td class=\"num\">"
+                << fmt::format("{:.1f}", decision.exp_score_loss) << "</td></tr>\n";
         }
         ofs << "</tbody></table></div>\n";
     }
 
     int current_round = -1;
-    for (const auto &decision : result.decisions) {
+    for (std::size_t index = 0; index < result.decisions.size(); ++index) {
+        const auto &decision = result.decisions[index];
         if (decision.round_index != current_round) {
             current_round = decision.round_index;
             ofs << "<h2>" << escape_html(format_round(decision.round)) << "</h2>\n";
@@ -472,7 +509,7 @@ summary { cursor:pointer; }
         };
         const bool is_best = decision.actual_rank == 1;
 
-        ofs << "<details"
+        ofs << "<details class=\"decision\" id=\"" << decision_anchor(index) << "\""
             << (decision.evaluated() && !is_best ? " open" : "") << "><summary>";
         ofs << escape_html(fmt::format(MAJSOUL_TEXT("turn {} · ", u8"{}巡目 ・ "),
                                        decision.turn));
@@ -537,6 +574,47 @@ summary { cursor:pointer; }
         }
         ofs << "</tbody></table></div></details>\n";
     }
+
+    // A decision the link points at may be collapsed, and the browser will not scroll
+    // to something inside a closed <details>. Open it first, then scroll and flash it.
+    ofs << R"(<script>
+(function () {
+  function reveal(hash) {
+    if (!hash || hash.length < 2) {
+      return;
+    }
+    var target = document.getElementById(hash.slice(1));
+    if (!target || target.tagName !== "DETAILS") {
+      return;
+    }
+    target.open = true;
+    // Instant, not smooth: a report runs to tens of thousands of pixels and animating
+    // the whole way takes seconds. The flash below shows where the jump landed.
+    target.scrollIntoView({block: "start"});
+    target.classList.remove("flash");
+    void target.offsetWidth; // restart the animation on a repeated click
+    target.classList.add("flash");
+  }
+
+  var rows = document.querySelectorAll("tr.jump[data-target]");
+  for (var i = 0; i < rows.length; ++i) {
+    rows[i].addEventListener("click", function (event) {
+      // Handles the anchor in the first cell as well, so that clicking it a second
+      // time still jumps: the hash would be unchanged and fire no hashchange.
+      event.preventDefault();
+      var hash = "#" + this.getAttribute("data-target");
+      if (window.history && window.history.replaceState) {
+        window.history.replaceState(null, "", hash);
+      }
+      reveal(hash);
+    });
+  }
+
+  window.addEventListener("hashchange", function () { reveal(window.location.hash); });
+  reveal(window.location.hash);
+})();
+</script>
+)";
 
     ofs << "</body>\n</html>\n";
 
