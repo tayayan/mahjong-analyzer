@@ -284,6 +284,12 @@ void write_text_report(std::ostream &os, const GameRecord &game,
     os << fmt::format(MAJSOUL_TEXT("skipped (vs riichi): {}\n",
                                    u8"除外 (他家立直中) : {}\n"),
                       summary.num_skipped_opponent_riichi);
+    if (summary.num_narrowed_search > 0) {
+        os << fmt::format(
+            MAJSOUL_TEXT("narrowed search   : {} (5+ shanten, no extra range)\n",
+                         u8"探索を縮小      : {} (5向聴以上)\n"),
+            summary.num_narrowed_search);
+    }
     if (summary.num_skipped_other > 0) {
         os << fmt::format(MAJSOUL_TEXT("skipped (other)   : {}\n",
                                        u8"除外 (その他)   : {}\n"),

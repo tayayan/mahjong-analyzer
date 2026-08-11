@@ -43,6 +43,18 @@ struct AnalyzerConfig
      */
     int max_shanten_under_riichi = 1;
 
+    /*!
+     * At or above this shanten number the expected score is calculated without the
+     * extra search range.
+     *
+     * The calculator explores every hand within `calc.extra` of the current shanten
+     * number, and that search explodes far from tenpai: a 5-shanten hand has been
+     * measured at over three minutes, and it exhausts the stack unless the process is
+     * given a gigabyte of it. Such discards are not close calls, so the search is
+     * narrowed rather than skipped. Raise this to disable the rule.
+     */
+    int narrow_search_shanten = 5;
+
     /*! Evaluate forced discards made after declaring riichi. */
     bool include_riichi = false;
 
@@ -108,6 +120,9 @@ struct DiscardDecision
     /*! At least one opponent had declared riichi. */
     bool opponent_riichi = false;
 
+    /*! The expected score was calculated without the extra search range. */
+    bool narrowed_search = false;
+
     /*! Number of tiles not visible to the player. */
     int unseen_tiles = 0;
 
@@ -142,6 +157,7 @@ struct AnalysisSummary
     int num_skipped_riichi = 0;
     int num_skipped_shanten = 0;
     int num_skipped_opponent_riichi = 0;
+    int num_narrowed_search = 0;
     int num_skipped_other = 0;
     double total_loss = 0.0;
     double mean_loss = 0.0;

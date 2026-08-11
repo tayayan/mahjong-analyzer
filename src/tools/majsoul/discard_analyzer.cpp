@@ -366,6 +366,10 @@ void evaluate(const GameRecord &game, const AnalyzerConfig &config,
     }
 
     ExpectedScoreCalculator::Config calc_config = config.calc;
+    if (decision.shanten >= config.narrow_search_shanten) {
+        decision.narrowed_search = true;
+        calc_config.extra = 0;
+    }
     calc_config.t_min = decision.turn;
     calc_config.t_max = MaxTurn;
     calc_config.sum = 0; // derived from the wall
@@ -428,6 +432,9 @@ AnalysisSummary summarize(const std::vector<DiscardDecision> &decisions)
         }
 
         ++summary.num_evaluated;
+        if (decision.narrowed_search) {
+            ++summary.num_narrowed_search;
+        }
         summary.total_loss += decision.exp_score_loss;
         rank_sum += decision.actual_rank;
         if (decision.actual_rank == 1) {
