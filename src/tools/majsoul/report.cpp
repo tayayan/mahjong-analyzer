@@ -367,7 +367,9 @@ void write_html_report(const std::filesystem::path &path, const GameRecord &game
         << R"(</title>
 <style>
 :root { color-scheme: light dark; --fg:#1b1b1f; --bg:#ffffff; --muted:#606070;
-        --line:#e2e2e8; --card:#f6f6f9; --good:#1a7f43; --bad:#c0392b; --warn:#b8860b; }
+        --line:#e2e2e8; --card:#f6f6f9; --good:#1a7f43; --bad:#c0392b; --warn:#b8860b;
+        /* Height the sticky round heading occupies; anything scrolled to must clear it. */
+        --sticky:44px; }
 @media (prefers-color-scheme: dark) {
   :root { --fg:#e6e6ea; --bg:#16161a; --muted:#a0a0b0; --line:#2e2e36; --card:#1e1e24;
           --good:#57d68a; --bad:#ff7b6b; --warn:#e0b33c; }
@@ -375,8 +377,13 @@ void write_html_report(const std::filesystem::path &path, const GameRecord &game
 body { margin:0; padding:24px; background:var(--bg); color:var(--fg);
        font-family:-apple-system,"Segoe UI",Meiryo,sans-serif; line-height:1.6; }
 h1 { font-size:1.5rem; margin:0 0 4px; }
+/* The round heading follows the page: a decision's own summary says the turn but not
+   the round, which is easy to lose track of once a candidate table fills the screen.
+   Each round is its own <section> so that a heading is pinned only while its own round
+   is on screen. As plain siblings every heading would pin at the same offset at once,
+   and the pile would show above the current one. */
 h2 { font-size:1.15rem; margin:32px 0 8px; border-bottom:1px solid var(--line);
-     padding-bottom:4px; }
+     padding:6px 0 4px; position:sticky; top:0; z-index:2; background:var(--bg); }
 a { color:inherit; }
 .meta { color:var(--muted); font-size:.9rem; margin-bottom:20px; }
 .cards { display:flex; flex-wrap:wrap; gap:12px; margin:16px 0; }
@@ -404,8 +411,8 @@ tr.jump { cursor:pointer; }
 tr.jump:hover td { background:color-mix(in srgb, var(--warn) 10%, transparent); }
 tr.jump a { text-decoration:none; }
 tr.jump a:hover { text-decoration:underline; }
-/* Leave room above the decision so it is not flush against the window edge. */
-details.decision { scroll-margin-top:16px; }
+/* Clear the sticky round heading, which would otherwise cover the decision. */
+details.decision { scroll-margin-top:calc(var(--sticky) + 8px); }
 details.flash > summary {
   animation:flash 1.6s ease-out;
   border-radius:6px;
@@ -466,7 +473,8 @@ details.flash > summary {
 
     const auto worst = worst_decisions(result, 10);
     if (!worst.empty()) {
-        ofs << "<h2>" << escape_html(MAJSOUL_TEXT("Largest losses", u8"損失の大きい局面"))
+        ofs << "<section><h2>"
+            << escape_html(MAJSOUL_TEXT("Largest losses", u8"損失の大きい局面"))
             << "</h2>\n<div class=\"scroll\"><table><thead><tr>";
         for (const char *header :
              {MAJSOUL_TEXT("round", u8"局"), MAJSOUL_TEXT("turn", u8"巡目"),
@@ -491,15 +499,19 @@ details.flash > summary {
                 << decision.candidates.size() << "</td><td class=\"num\">"
                 << fmt::format("{:.1f}", decision.exp_score_loss) << "</td></tr>\n";
         }
-        ofs << "</tbody></table></div>\n";
+        ofs << "</tbody></table></div></section>\n";
     }
 
     int current_round = -1;
     for (std::size_t index = 0; index < result.decisions.size(); ++index) {
         const auto &decision = result.decisions[index];
         if (decision.round_index != current_round) {
+            if (current_round != -1) {
+                ofs << "</section>\n";
+            }
             current_round = decision.round_index;
-            ofs << "<h2>" << escape_html(format_round(decision.round)) << "</h2>\n";
+            ofs << "<section><h2>" << escape_html(format_round(decision.round))
+                << "</h2>\n";
         }
 
         // Tiles carry markup, so the line is assembled piece by piece instead of
@@ -573,6 +585,9 @@ details.flash > summary {
                 << "</td></tr>\n";
         }
         ofs << "</tbody></table></div></details>\n";
+    }
+    if (current_round != -1) {
+        ofs << "</section>\n";
     }
 
     // A decision the link points at may be collapsed, and the browser will not scroll
